@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:PageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SLFormsApp.Pages.LoginPage"
+    xmlns:base="clr-namespace:SLFormsApp.Pages.Base"
+    xmlns:views="clr-namespace:SLFormsApp.Views"
+    Title="Login">
+        <RelativeLayout>
+            <StackLayout
+                VerticalOptions="Center"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" 
+                Margin="20">
+                    <Entry Placeholder="email" Text="{Binding Path=Login, Mode=TwoWay}">
+                        <Entry.Triggers>
+                            <DataTrigger Binding="{Binding IsLoginValid}" TargetType="Entry" Value="false">
+                                <Setter Property="Style" Value="{StaticResource EntryErrorStyle}" />
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+                    <Entry IsPassword="True" Placeholder="password" Text="{Binding Path=Password, Mode=TwoWay}">
+                        <Entry.Triggers>
+                            <DataTrigger Binding="{Binding IsPasswordValid}" TargetType="Entry" Value="false">
+                                <Setter Property="Style" Value="{StaticResource EntryErrorStyle}" />
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+                    <Button Text="Login" Command="{Binding LoginCommand}"/>
+                    <Button Text="Register" Command="{Binding RegisterCommand}"/>
+            </StackLayout>
+            <views:BusyView
+                IsVisible="{Binding IsBusy}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}"/>
+        </RelativeLayout>
+</base:PageBase>

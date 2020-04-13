@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:PageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SLFormsApp.Pages.RegisterPage"
+    xmlns:views="clr-namespace:SLFormsApp.Views"
+    xmlns:base="clr-namespace:SLFormsApp.Pages.Base"
+    xmlns:behavior="clr-namespace:SLFormsApp.Behaviors"
+    Title="Register">
+        <RelativeLayout>
+            <StackLayout
+                VerticalOptions="Center"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" 
+                Margin="20">
+                    <Entry Placeholder="email" Text="{Binding Login}">
+                        <Entry.Behaviors>
+                            <behavior:EmailValidator
+                                IsValid="{Binding IsLoginValid, Mode=OneWayToSource}"/>
+                        </Entry.Behaviors>
+                        <Entry.Triggers>
+                            <DataTrigger Binding="{Binding IsLoginValid}" TargetType="Entry" Value="false">
+                                <Setter Property="Style" Value="{StaticResource EntryErrorStyle}" />
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+                    <Entry Placeholder="password" IsPassword="True" Text="{Binding Path=Password, Mode=TwoWay}">
+                        <Entry.Behaviors>
+                            <behavior:PasswordValidator
+                                IsValid="{Binding IsPasswordValid, Mode=OneWayToSource}"/>
+                        </Entry.Behaviors>
+                        <Entry.Triggers>
+                            <DataTrigger Binding="{Binding IsPasswordValid}" TargetType="Entry" Value="false">
+                                <Setter Property="Style" Value="{StaticResource EntryErrorStyle}" />
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+                    <Button
+                        x:Name="RegisterButton"
+                        Text="Register"
+                        Command="{Binding RegisterCommand}">
+                    </Button>
+                    <Button Text="Login" Command="{Binding LoginCommand}"/>
+            </StackLayout>
+            <views:BusyView
+                IsVisible="{Binding IsBusy}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}"/>
+        </RelativeLayout>
+</base:PageBase>

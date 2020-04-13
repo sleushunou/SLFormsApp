@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base:PageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SLFormsApp.Pages.SecondPage"
+    xmlns:base="clr-namespace:SLFormsApp.Pages.Base"
+    xmlns:viewmodels="clr-namespace:SLFormsApp.ViewModels"
+    xmlns:views="clr-namespace:SLFormsApp.Views"
+    Title="Second"
+    IconImageSource="Two">
+    <RelativeLayout>
+        <ListView
+            x:Name="MyListView"
+            ItemsSource="{Binding Items}"
+            CachingStrategy="RecycleElement"
+            SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Login}"
+                                   HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="Center"/>
+                            <Button
+                                Text="X"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ProfilesListViewModel}}, Path=DeleteUserCommand}"
+                                CommandParameter="{Binding}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <views:BusyView
+                IsVisible="{Binding IsBusy}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}"/>
+    </RelativeLayout>
+</base:PageBase>
