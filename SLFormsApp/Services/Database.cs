@@ -21,7 +21,7 @@ namespace SLFormsApp.Services
 
         public Database()
         {
-            InitializeAsync().FireAndForget();
+            InitializeAsync().SafeTaskWrapper();
         }
 
         public async Task<List<User>> GetUsersAsync()

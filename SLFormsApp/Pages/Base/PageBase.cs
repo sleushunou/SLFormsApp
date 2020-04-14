@@ -1,6 +1,6 @@
 ﻿using System;
+using Autofac;
 using SLFormsApp.Interfaces;
-using Softeq.XToolkit.WhiteLabel.Bootstrapper.Abstract;
 using Xamarin.Forms;
 
 namespace SLFormsApp.Pages.Base
@@ -9,14 +9,12 @@ namespace SLFormsApp.Pages.Base
     {
         public PageBase()
         {
-            var container = ((App)Application.Current).Container;
+            var container = ((App)Application.Current).Scope;
 
             var navigationService = container.Resolve<INavigationService>();
             navigationService.Navigation = Navigation;
 
-            BindingContext = 
-                typeof(IContainer).GetMethod("Resolve").MakeGenericMethod(ViewModelType)
-                .Invoke(container, new object[] { new object[1] { navigationService } });
+            BindingContext = container.Resolve(ViewModelType, new TypedParameter(typeof(INavigationService), navigationService));
         }
 
         protected abstract Type ViewModelType { get; }

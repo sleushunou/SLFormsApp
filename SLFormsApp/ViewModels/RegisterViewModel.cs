@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using SLFormsApp.Interfaces;
-using Softeq.XToolkit.Common.Commands;
+using Softeq.XToolkit.Common.Command;
 using Softeq.XToolkit.WhiteLabel.Mvvm;
 
 namespace SLFormsApp.ViewModels

@@ -6,7 +6,7 @@ using System.Windows.Input;
 using Plugin.Settings;
 using SLFormsApp.Models;
 using SLFormsApp.Services;
-using Softeq.XToolkit.Common.Commands;
+using Softeq.XToolkit.Common.Command;
 using Softeq.XToolkit.Common.Extensions;
 using Softeq.XToolkit.WhiteLabel.Mvvm;
 
@@ -24,7 +24,7 @@ namespace SLFormsApp.ViewModels
 
             DeleteUserCommand = new AsyncCommand<User>(DeleteUserAsync);
 
-            LoadDataAsync().FireAndForget();
+            LoadDataAsync().SafeTaskWrapper();
         }
 
         public ICommand<User> DeleteUserCommand { get; }
