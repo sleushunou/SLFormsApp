@@ -110,6 +110,7 @@
     <Folder Include="Assets.xcassets\Minus.imageset\" />
     <Folder Include="Assets.xcassets\One.imageset\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -125,6 +126,8 @@
     </Compile>
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Renderers\ImageButtonRenderer.cs" />
+    <Compile Include="Renderers\FlagViewRenderer.cs" />
+    <Compile Include="Views\NSFlagView.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
