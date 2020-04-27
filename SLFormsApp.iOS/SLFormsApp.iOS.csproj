@@ -119,6 +119,8 @@
     <ImageAsset Include="Assets.xcassets\Two.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Two.imageset\two-2.png" />
     <ImageAsset Include="Assets.xcassets\One.imageset\one-2.png" />
+    <ImageAsset Include="Assets.xcassets\Minus.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Minus.imageset\minus.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -145,5 +147,6 @@
     <Folder Include="Views\" />
     <Folder Include="Renderers\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Assets.xcassets\Minus.imageset\" />
   </ItemGroup>
 </Project>
