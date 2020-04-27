@@ -5,8 +5,13 @@
     x:Class="SLFormsApp.Pages.FirstPage"
     Title="First"
     xmlns:base="clr-namespace:SLFormsApp.Pages.Base"
-    xmlns:views="clr-namespace:SLFormsApp.Views"
-    IconImageSource="One">
+    xmlns:views="clr-namespace:SLFormsApp.Views">
+    <base:PageBase.IconImageSource>
+        <OnPlatform x:TypeArguments="FileImageSource">
+            <On Platform="iOS, Android" Value="Two" />
+            <On Platform="UWP" Value="Assets/Two.png" />
+        </OnPlatform>
+    </base:PageBase.IconImageSource>
     <RelativeLayout>
         <StackLayout
                 HorizontalOptions="Center"

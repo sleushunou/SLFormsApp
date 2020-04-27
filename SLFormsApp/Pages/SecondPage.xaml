@@ -6,8 +6,13 @@
     xmlns:base="clr-namespace:SLFormsApp.Pages.Base"
     xmlns:viewmodels="clr-namespace:SLFormsApp.ViewModels"
     xmlns:views="clr-namespace:SLFormsApp.Views"
-    Title="Second"
-    IconImageSource="Two">
+    Title="Second">
+    <base:PageBase.IconImageSource>
+        <OnPlatform x:TypeArguments="FileImageSource">
+            <On Platform="iOS, Android" Value="One" />
+            <On Platform="UWP" Value="Assets/One.png" />
+        </OnPlatform>
+    </base:PageBase.IconImageSource>
     <RelativeLayout>
         <ListView
             x:Name="MyListView"
