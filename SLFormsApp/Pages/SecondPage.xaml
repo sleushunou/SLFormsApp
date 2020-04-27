@@ -20,26 +20,39 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame
-                            HasShadow="False"
-                            BorderColor="Black"
+                        <ContentView
                             Margin="8, 4, 8, 4">
-                            <StackLayout
-                                Orientation="Horizontal">
-                                <Label
-                                    FontSize="18"
-                                    Text="{Binding Login}"
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="Center"/>
-                                <Button
-                                    BackgroundColor="Transparent"
-                                    WidthRequest="30"
-                                    HeightRequest="30"
-                                    ImageSource="Minus"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ProfilesListViewModel}}, Path=DeleteUserCommand}"
-                                    CommandParameter="{Binding}"/>
-                            </StackLayout>
-                        </Frame>
+                            <Frame
+                                HasShadow="False"
+                                BorderColor="Black"
+                                Padding="0">
+                                <StackLayout
+                                    Orientation="Horizontal">
+                                    <Label
+                                        Margin="8, 0, 8, 0"
+                                        FontSize="18"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="FillAndExpand"
+                                        Text="{Binding Login}"/>
+                                    <ImageButton
+                                        Padding="0"
+                                        Margin="8, 0, 8, 0"
+                                        VerticalOptions="Center"
+                                        BackgroundColor="Transparent"
+                                        WidthRequest="30"
+                                        HeightRequest="30"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ProfilesListViewModel}}, Path=DeleteUserCommand}"
+                                        CommandParameter="{Binding}">
+                                        <ImageButton.Source>
+                                            <OnPlatform x:TypeArguments="FileImageSource">
+                                                <On Platform="iOS, Android" Value="Minus" />
+                                                <On Platform="UWP" Value="Assets/Minus.png" />
+                                            </OnPlatform>
+                                        </ImageButton.Source>
+                                    </ImageButton>
+                                </StackLayout>
+                            </Frame>
+                        </ContentView>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
