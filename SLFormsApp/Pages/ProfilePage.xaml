@@ -2,7 +2,7 @@
 <base:PageBase
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="SLFormsApp.Pages.FirstPage"
+    x:Class="SLFormsApp.Pages.ProfilePage"
     Title="First"
     xmlns:base="clr-namespace:SLFormsApp.Pages.Base"
     xmlns:views="clr-namespace:SLFormsApp.Views">

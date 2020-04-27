@@ -26,7 +26,7 @@ namespace SLFormsApp
             builder.RegisterType<RegisterViewModel>().InstancePerDependency();
             builder.RegisterType<ProfileViewModel>().InstancePerDependency();
             builder.RegisterType<MainViewModel>().InstancePerDependency();
-            builder.RegisterType<ProfilesListViewModel>().InstancePerDependency();
+            builder.RegisterType<UserListViewModel>().InstancePerDependency();
             Scope = builder.Build().BeginLifetimeScope();
 
             if (CrossSettings.Current.GetValueOrDefault(Defines.CurrentUserKey, null) == null)

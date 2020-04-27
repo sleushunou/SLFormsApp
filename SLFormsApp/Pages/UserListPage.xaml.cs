@@ -5,13 +5,13 @@ using Xamarin.Forms.Xaml;
 
 namespace SLFormsApp.Pages
 {
-    public partial class SecondPage : PageBase
+    public partial class UserListPage : PageBase
     {
-        public SecondPage()
+        public UserListPage()
         {
             InitializeComponent();
         }
 
-        protected override Type ViewModelType => typeof(ProfilesListViewModel);
+        protected override Type ViewModelType => typeof(UserListViewModel);
     }
 }

@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace SLFormsApp.Pages
 {
-    public partial class FirstPage : PageBase
+    public partial class ProfilePage : PageBase
     {
-        public FirstPage()
+        public ProfilePage()
         {
             InitializeComponent();
         }

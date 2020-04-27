@@ -12,11 +12,11 @@ using Softeq.XToolkit.WhiteLabel.Mvvm;
 
 namespace SLFormsApp.ViewModels
 {
-    public class ProfilesListViewModel : ViewModelBase
+    public class UserListViewModel : ViewModelBase
     {
         private Database _dataBase;
 
-        public ProfilesListViewModel(Database dataBase)
+        public UserListViewModel(Database dataBase)
         {
             _dataBase = dataBase;
 
