@@ -6,15 +6,16 @@
     xmlns:base="clr-namespace:SLFormsApp.Pages.Base"
     xmlns:viewmodels="clr-namespace:SLFormsApp.ViewModels"
     xmlns:views="clr-namespace:SLFormsApp.Views"
-    Title="Second">
+    Title="Users">
     <base:PageBase.IconImageSource>
         <OnPlatform x:TypeArguments="FileImageSource">
-            <On Platform="iOS, Android" Value="One" />
+            <On Platform="iOS, Android, macOS" Value="One" />
             <On Platform="UWP" Value="Assets/One.png" />
         </OnPlatform>
     </base:PageBase.IconImageSource>
     <RelativeLayout>
         <ListView
+            BackgroundColor="White"
             x:Name="MyListView"
             RowHeight="70"
             ItemsSource="{Binding Items}"
@@ -40,17 +41,17 @@
                                         HorizontalOptions="FillAndExpand"
                                         Text="{Binding Login}"/>
                                     <ImageButton
+                                        BackgroundColor="Transparent"
                                         Padding="0"
                                         Margin="8, 0, 8, 0"
                                         VerticalOptions="Center"
-                                        BackgroundColor="Transparent"
                                         WidthRequest="30"
                                         HeightRequest="30"
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:UserListViewModel}}, Path=DeleteUserCommand}"
                                         CommandParameter="{Binding}">
                                         <ImageButton.Source>
                                             <OnPlatform x:TypeArguments="FileImageSource">
-                                                <On Platform="iOS, Android" Value="Minus" />
+                                                <On Platform="iOS, Android, macOS" Value="Minus" />
                                                 <On Platform="UWP" Value="Assets/Minus.png" />
                                             </OnPlatform>
                                         </ImageButton.Source>

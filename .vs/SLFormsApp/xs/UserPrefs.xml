@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{3B6C5283-A515-4FE5-8EF6-E1E1B4798DCD}|Default">
+  <MonoDevelop.Ide.ItemProperties.SLFormsApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D858151E-5E58-4024-A140-DD317091B52A" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SLFormsApp/Pages/UserListPage.xaml">
+    <Files>
+      <File FileName="SLFormsApp.Mac/Renderers/ImageButtonRendere.cs" Line="37" Column="6" />
+      <File FileName="SLFormsApp/Pages/UserListPage.xaml" Line="41" Column="68" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SLFormsApp" expanded="True">
+            <Node name="SLFormsApp" expanded="True">
+              <Node name="Pages" expanded="True">
+                <Node name="UserListPage.xaml" selected="True" />
+              </Node>
+            </Node>
+            <Node name="SLFormsApp.Mac" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.SLFormsApp.Mac PreferredExecutionTarget="Test1" />
+  <MonoDevelop.Ide.ItemProperties.SLFormsApp.Android PreferredExecutionTarget="Android.pixel_2_q_10_0_-_api_29" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

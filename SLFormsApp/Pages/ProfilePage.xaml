@@ -3,12 +3,12 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="SLFormsApp.Pages.ProfilePage"
-    Title="First"
+    Title="Profile"
     xmlns:base="clr-namespace:SLFormsApp.Pages.Base"
     xmlns:views="clr-namespace:SLFormsApp.Views">
     <base:PageBase.IconImageSource>
         <OnPlatform x:TypeArguments="FileImageSource">
-            <On Platform="iOS, Android" Value="Two" />
+            <On Platform="iOS, Android, macOS" Value="Two" />
             <On Platform="UWP" Value="Assets/Two.png" />
         </OnPlatform>
     </base:PageBase.IconImageSource>
